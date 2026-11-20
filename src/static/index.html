@@ -12,6 +12,9 @@
     />
   </head>
   <body>
+    <section class="announcement-banner" aria-label="Important announcement">
+      📢 Activity registration is open until the end of the month. Don't lose your spot!
+    </section>
     <header>
       <h1>Mergington High School</h1>
       <h2>Extracurricular Activities</h2>
@@ -43,17 +46,19 @@
               </button>
             </div>
 
-            <div class="filter-container">
-              <div class="filter-label">Filter by category:</div>
-              <div class="category-filters" id="category-filters">
-                <button class="category-filter active" data-category="all">All</button>
-                <button class="category-filter" data-category="sports">Sports</button>
-                <button class="category-filter" data-category="arts">Arts</button>
-                <button class="category-filter" data-category="academic">Academic</button>
-                <button class="category-filter" data-category="community">Community</button>
-                <button class="category-filter" data-category="technology">Technology</button>
-              </div>
-            </div>
+            <form class="filter-container">
+              <fieldset>
+                <legend>Filter by category:</legend>
+                <div class="category-filters" id="category-filters">
+                  <button class="category-filter active" data-category="all">All</button>
+                  <button class="category-filter" data-category="sports">Sports</button>
+                  <button class="category-filter" data-category="arts">Arts</button>
+                  <button class="category-filter" data-category="academic">Academic</button>
+                  <button class="category-filter" data-category="community">Community</button>
+                  <button class="category-filter" data-category="technology">Technology</button>
+                </div>
+              </fieldset>
+            </form>
 
             <!-- Day Filter -->
             <div class="filter-container day-filter-container">
@@ -95,14 +100,14 @@
     </main>
 
     <footer>
-      <p>&copy; 2023 Mergington High School</p>
+      <p>&copy; 2026 Mergington High School</p>
     </footer>
 
     <!-- Registration Modal -->
-    <div id="registration-modal" class="modal hidden">
+    <div id="registration-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="registration-title">
       <div class="modal-content">
         <span class="close-modal">&times;</span>
-        <h3>Register for <span id="modal-activity-name"></span></h3>
+        <h3 id="registration-title">Register for <span id="modal-activity-name"></span></h3>
         <form id="signup-form">
           <div class="form-group">
             <label for="email">Student Email:</label>
@@ -115,10 +120,10 @@
     </div>
 
     <!-- Login Modal -->
-    <div id="login-modal" class="modal hidden">
+    <div id="login-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="login-title">
       <div class="modal-content">
         <span class="close-login-modal">&times;</span>
-        <h3>Teacher Login</h3>
+        <h3 id="login-title">Teacher Login</h3>
         <form id="login-form">
           <div class="form-group">
             <label for="username">Username:</label>
